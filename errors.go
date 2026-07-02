@@ -27,11 +27,11 @@ func IsGoNotificationError(err error) (*Error, bool) {
 
 // i18n keys — caller must register translations for these keys.
 const (
-	KeyNotificationInvalidToken   = "NotificationInvalidToken"
-	KeyNotificationInvalidPayload = "NotificationInvalidPayload"
-	KeyNotificationSendFailed     = "NotificationSendFailed"
-	KeyNotificationMissingConfig  = "NotificationMissingConfig"
-	KeyNotificationTopicEmpty     = "NotificationTopicEmpty"
+	KeyNotificationInvalidToken    = "NotificationInvalidToken"
+	KeyNotificationInvalidPayload  = "NotificationInvalidPayload"
+	KeyNotificationSendFailed      = "NotificationSendFailed"
+	KeyNotificationMissingConfig   = "NotificationMissingConfig"
+	KeyNotificationTopicEmpty      = "NotificationTopicEmpty"
 	KeyNotificationInvalidPlatform = "NotificationInvalidPlatform"
 )
 

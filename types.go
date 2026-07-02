@@ -40,8 +40,9 @@ func ToPlatform(s string) Platform {
 type Priority string
 
 const (
-	PriorityNormal Priority = "normal"
-	PriorityHigh   Priority = "high"
+	PriorityUnknown Priority = ""
+	PriorityNormal  Priority = "normal"
+	PriorityHigh    Priority = "high"
 )
 
 // String returns the string representation
@@ -54,15 +55,15 @@ func (p Priority) IsValid() bool {
 	return p == PriorityNormal || p == PriorityHigh
 }
 
-// ToPriority converts a string to Priority
+// ToPriority converts a string to Priority (case-insensitive)
 func ToPriority(s string) Priority {
-	switch s {
-	case string(PriorityHigh):
+	switch strings.ToLower(s) {
+	case "high":
 		return PriorityHigh
-	case string(PriorityNormal):
+	case "normal":
 		return PriorityNormal
 	default:
-		return PriorityNormal
+		return PriorityUnknown
 	}
 }
 
