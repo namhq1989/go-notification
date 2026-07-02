@@ -1,6 +1,9 @@
 package notification
 
-import "time"
+import (
+	"strings"
+	"time"
+)
 
 // Platform represents the notification platform
 type Platform string
@@ -23,10 +26,10 @@ func (p Platform) IsValid() bool {
 
 // ToPlatform converts a string to Platform
 func ToPlatform(s string) Platform {
-	switch s {
-	case string(PlatformIOS):
+	switch strings.ToLower(s) {
+	case "ios":
 		return PlatformIOS
-	case string(PlatformAndroid):
+	case "android":
 		return PlatformAndroid
 	default:
 		return PlatformUnknown

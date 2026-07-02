@@ -2,6 +2,7 @@ package notification
 
 import (
 	"context"
+	"sort"
 	"testing"
 	"time"
 
@@ -44,6 +45,10 @@ func (m *mockTokenStore) FindActiveByUserID(_ *appcontext.AppContext, userID str
 			result = append(result, *t)
 		}
 	}
+	// Sort by TokenHash for deterministic order in tests
+	sort.Slice(result, func(i, j int) bool {
+		return result[i].TokenHash < result[j].TokenHash
+	})
 	return result, nil
 }
 

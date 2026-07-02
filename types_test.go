@@ -32,7 +32,8 @@ func TestToPlatform(t *testing.T) {
 		{"android", PlatformAndroid},
 		{"", PlatformUnknown},
 		{"web", PlatformUnknown},
-		{"IOS", PlatformUnknown}, // case sensitive
+		{"IOS", PlatformIOS},     // case insensitive
+		{"Android", PlatformAndroid}, // case insensitive
 	}
 
 	for _, tt := range tests {
